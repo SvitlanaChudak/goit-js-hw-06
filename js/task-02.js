@@ -6,9 +6,21 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-for (let i = 0; i < ingredients.length; i += 1) {
-  console.log(ingredients[i]);
+console.log(ingredients);
+const elements = document.querySelector("ingredients");
+const list = document.querySelector("ul");
+const arr = [];
+ingredients.map(item => {
   const ingredient = document.createElement("li");
-  console.log(ingredient);
-  ingredient.textContent = ingredients[i];
-}
+  ingredient.classList.add("item");
+  ingredient.textContent = item;
+  arr.push(ingredient);
+});
+console.log(arr)
+list.append(...arr);
+
+
+
+
+
+  

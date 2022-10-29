@@ -14,14 +14,14 @@ const images = [
 ];
 const gallery = document.querySelector(".gallery");
 const arr = [];
-for (let i = 0; i < images.length; i += 1) {
-  const markup = `<li class="gallery-item"><img class="gallery-img" src="${images[i].url}" alt="${images[i].alt}"></li>`;
+const elements = images.map(image => {
+  const markup = `<li class="gallery-item"><img class="gallery-img" src="${image.url}" alt="${image.alt}" width="300px"></li>`;
   arr.push(markup);
-}
+  })
 console.log(arr);
-gallery.insertAdjacentHTML("beforeend", arr);
+gallery.insertAdjacentHTML("beforeend", arr.join(''));
 gallery.style.display = 'flex';
 gallery.style.flexWrap = 'wrap';
 gallery.style.gap = '20px';
-console.log(gallery.style)
+console.log(gallery.style);
 
