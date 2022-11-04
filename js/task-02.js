@@ -9,12 +9,11 @@ const ingredients = [
 console.log(ingredients);
 const elements = document.querySelector("ingredients");
 const list = document.querySelector("ul");
-const arr = [];
-ingredients.map(item => {
+const arr = ingredients.map(item => {
   const ingredient = document.createElement("li");
   ingredient.classList.add("item");
   ingredient.textContent = item;
-  arr.push(ingredient);
+  return(ingredient);
 });
 console.log(arr)
 list.append(...arr);
